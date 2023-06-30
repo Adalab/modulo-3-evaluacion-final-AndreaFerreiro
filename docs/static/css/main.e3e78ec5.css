@@ -1,2 +1,0 @@
-.page{background-color:#000;min-height:100vh;padding:100px 0}.hero,.main,.page{flex-direction:column}.hero,.main,.main__form,.page{align-items:center;display:flex}.main__form{gap:20px;justify-content:center}.name-input{background-color:#d3d3d3;border:1px solid #fff;border-radius:5px;height:20px;width:200px}.name-submit{border-radius:5px;padding:4px}.list{display:flex;flex-wrap:wrap;gap:10px}.list__element{border:1px solid #fff;height:300px;width:200px}.element-name{color:#fff;font-size:20px}.element-race{color:#fff;font-size:15px}
-/*# sourceMappingURL=main.e3e78ec5.css.map*/

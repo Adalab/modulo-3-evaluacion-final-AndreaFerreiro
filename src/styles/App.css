@@ -1,5 +1,4 @@
 .page {
-  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,25 +28,27 @@
   height: 20px;
   border-radius: 5px;
 }
-.name-submit{
-    border-radius: 5px;
-    padding: 4px;
-}
 .list{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    list-style: none;
 }
-.list__element{
-    border: 1px solid white;
+.list-element{
+    border: 1px solid black;
     width: 200px;
     height: 300px;
 }
+.element-img{
+  width: 200px;
+}
 .element-name{
-    color: white;
-    font-size: 20px;
+    color: black;
+    font-size: 18px;
+    padding-left: 10px;
 }
 .element-race{
-    color: white;
+    color: black;
     font-size: 15px;
+    padding-left: 10px;
 }

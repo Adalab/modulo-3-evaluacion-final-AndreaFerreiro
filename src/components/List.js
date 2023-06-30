@@ -1,6 +1,6 @@
 import Element from "./Element";
-const List = ({characterList}) => {
-  const htmlLi = characterList.map((eachCharacter) => (
+const List = ({filterCharacters}) => {
+  const htmlLi = filterCharacters.map((eachCharacter) => (
     <li key={eachCharacter.id} className="list-element">
       <Element eachCharacter={eachCharacter} />
     </li>

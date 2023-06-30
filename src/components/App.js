@@ -6,6 +6,7 @@ import callToApi from '../services/api';
 import ls from '../services/LocalStorage';
 import Hero from './Hero';
 import List from './List';
+import Form from './Form';
 function App() {
   const [characterList, setCharacterList] = useState( ls.get('characters',[]));
   const [search, setSearch] = useState('');
@@ -19,29 +20,19 @@ function App() {
       });
     }
   }, []);
-
   const handleSearch = (ev) => {
     ev.preventDefault();
     const searchValue = ev.target.value.toLowerCase();
     setSearch(searchValue);
   }
+  const filterCharacters = characterList
+    .filter((eachCharacter)=> eachCharacter.name.toLowerCase().includes(search))
   return (
     <div className="page">
       <Hero />
       <main className="main">
-        <form className="main__form">
-          <label className="main__form--label" htmlFor="name">
-            <input
-              className="name-input"
-              type="text"
-              placeholder="Filtrar por nombre"
-              id="name"
-              htmlFor="name"
-              onInput={handleSearch}
-            ></input>
-          </label>
-        </form>
-        <List characterList={characterList} />
+        <Form handleSearch={handleSearch}/>
+        <List filterCharacters={filterCharacters} />
       </main>
     </div>
   );

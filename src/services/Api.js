@@ -1,9 +1,17 @@
-const callToApi = (data)=>{
-    return fetch('https://dev.adalab.es/api/projectCard', {
-        method: 'POST',
-        body: JSON.stringify(data),
-        headers: { 'content-type': 'application/json' },
-      })
-    .then((response)=> response.json())
-  }
-  export default callToApi;
+const callToApi = () => {
+  return (fetch('https://rickandmortyapi.com/api/character')
+    .then((response) => response.json())
+    .then(data => {
+      const cleanData = data.results.map((objectAPI) => {
+        return {
+          id: objectAPI.id,
+          image: objectAPI.image,
+          name: objectAPI.name,
+          species: objectAPI.species,
+        };
+      });
+      console.log(cleanData);
+      return cleanData;
+    })
+)};
+export default callToApi;

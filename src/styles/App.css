@@ -1,0 +1,53 @@
+.page {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: 100px 0px;
+}
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main__form {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.name-input {
+  width: 200px;
+  background-color: lightgray;
+  border: 1px solid white;
+  height: 20px;
+  border-radius: 5px;
+}
+.name-submit{
+    border-radius: 5px;
+    padding: 4px;
+}
+.list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.list__element{
+    border: 1px solid white;
+    width: 200px;
+    height: 300px;
+}
+.element-name{
+    color: white;
+    font-size: 20px;
+}
+.element-race{
+    color: white;
+    font-size: 15px;
+}

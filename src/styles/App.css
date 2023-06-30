@@ -11,6 +11,10 @@
   flex-direction: column;
   align-items: center;
 }
+.hero__img{
+  width: 500px;
+  margin-bottom: 20px;
+}
 .main {
   display: flex;
   flex-direction: column;

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../styles/App.scss';
+import '../styles/Main.scss';
 import { useLocation, matchPath } from 'react-router';
 import { Link, Route, Routes, useParams } from 'react-router-dom';
 import callToApi from '../services/api';
@@ -16,7 +16,6 @@ function App() {
     if (ls.get('characters', null) === null) {
       callToApi().then((cleanData) => {
         setCharacterList(cleanData);
-        console.log(characterList);
         ls.set('characters', cleanData);
       });
     }
@@ -30,15 +29,9 @@ function App() {
     eachCharacter.name.toLowerCase().includes(search)
   );
   const {pathname} = useLocation();
-  console.log(pathname);
   const routeData = matchPath('/element/:elementId', pathname);
-  console.log(routeData)
-
   const elementId = routeData !== null ? routeData.params.elementId : '';
-  console.log(elementId)
-
   const elementData = characterList.find((element) => element.id === parseInt(elementId) );
-  console.log(elementData);
 
   return (
     <div className="page">

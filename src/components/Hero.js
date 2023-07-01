@@ -1,3 +1,4 @@
+import '../styles/Hero.scss';
 const Hero = () => {
   return (
     <hero className="hero">

@@ -1,0 +1,14 @@
+.main__form {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  .name-input {
+    width: 400px;
+    background-color: white;
+    border: 1px solid white;
+    height: 30px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }

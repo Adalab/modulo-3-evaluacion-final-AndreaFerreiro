@@ -1,3 +1,4 @@
+import '../styles/List.scss';
 import Element from './Element';
 import { NavLink } from 'react-router-dom';
 const List = ({ filterCharacters }) => {

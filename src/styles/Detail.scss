@@ -1,0 +1,30 @@
+.detail{
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #b0bd2e;
+    margin-top: 30px;
+    padding: 20px;
+    min-width: 700px;
+    display: flex;
+    gap: 30px;
+  }
+  .detailImg{
+    max-width: 300px;
+    border-radius: 10px;
+  }
+  .detailData{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+  }
+  .reset{
+    background-color: #94512c;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: none;
+    margin-top: 20px;
+  }

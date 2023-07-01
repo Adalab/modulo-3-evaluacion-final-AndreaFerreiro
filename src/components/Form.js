@@ -1,3 +1,4 @@
+import '../styles/Form.scss';
 const Form = ({handleSearch})=> {
     return(
         <form className="main__form">

@@ -1,3 +1,4 @@
+import '../styles/Detail.scss';
 import { NavLink } from 'react-router-dom';
 
 const ElementDetail = ({ elementData }) => {

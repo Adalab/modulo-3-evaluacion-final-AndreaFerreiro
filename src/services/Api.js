@@ -9,7 +9,6 @@ const callToApi = () => {
           name: objectAPI.name,
         };
       });
-      console.log(cleanData);
       return cleanData;
     })
 )};

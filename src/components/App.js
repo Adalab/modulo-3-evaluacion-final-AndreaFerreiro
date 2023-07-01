@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import '../styles/App.css';
+import '../styles/App.scss';
 import { useLocation, matchPath } from 'react-router';
 import { Link, Route, Routes, useParams } from 'react-router-dom';
 import callToApi from '../services/api';

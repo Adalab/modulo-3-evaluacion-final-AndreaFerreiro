@@ -16,7 +16,7 @@ function App() {
     if (ls.get('characters', null) === null) {
       callToApi().then((cleanData) => {
         setCharacterList(cleanData);
-        ls.set('characters', cleanData);
+        //ls.set('characters', cleanData);
       });
     }
   }, []);
@@ -24,6 +24,7 @@ function App() {
     ev.preventDefault();
     const searchValue = ev.target.value.toLowerCase();
     setSearch(searchValue);
+    ls.set('search', search);
   };
   const filterCharacters = characterList.filter((eachCharacter) =>
     eachCharacter.name.toLowerCase().includes(search)
@@ -32,7 +33,7 @@ function App() {
   const routeData = matchPath('/element/:elementId', pathname);
   const elementId = routeData !== null ? routeData.params.elementId : '';
   const elementData = characterList.find((element) => element.id === parseInt(elementId) );
-
+  console.log(elementData);
   return (
     <div className="page">
       <Hero />

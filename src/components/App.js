@@ -7,10 +7,11 @@ import ls from '../services/LocalStorage';
 import Hero from './Hero';
 import List from './List';
 import Form from './Form';
+import ElementDetail from './ElementDetail';
 function App() {
-  const [characterList, setCharacterList] = useState( ls.get('characters',[]));
+  const [characterList, setCharacterList] = useState(ls.get('characters', []));
   const [search, setSearch] = useState('');
-  
+
   useEffect(() => {
     if (ls.get('characters', null) === null) {
       callToApi().then((cleanData) => {
@@ -24,15 +25,26 @@ function App() {
     ev.preventDefault();
     const searchValue = ev.target.value.toLowerCase();
     setSearch(searchValue);
-  }
-  const filterCharacters = characterList
-    .filter((eachCharacter)=> eachCharacter.name.toLowerCase().includes(search))
+  };
+  const filterCharacters = characterList.filter((eachCharacter) =>
+    eachCharacter.name.toLowerCase().includes(search)
+  );
   return (
     <div className="page">
       <Hero />
       <main className="main">
-        <Form handleSearch={handleSearch}/>
-        <List filterCharacters={filterCharacters} />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Form handleSearch={handleSearch} />
+                <List filterCharacters={filterCharacters} />
+              </>
+            }
+          />
+          <Route path="/element:ElementId" element={<ElementDetail />} filterCharacters={filterCharacters} />
+        </Routes>
       </main>
     </div>
   );

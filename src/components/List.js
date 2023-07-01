@@ -1,15 +1,13 @@
-import Element from "./Element";
-const List = ({filterCharacters}) => {
+import Element from './Element';
+import { NavLink } from 'react-router-dom';
+const List = ({ filterCharacters }) => {
   const htmlLi = filterCharacters.map((eachCharacter) => (
-    <li key={eachCharacter.id} className="list-element">
-      <Element eachCharacter={eachCharacter} />
-    </li>
+    <NavLink key={eachCharacter.id} to="/element:ElementId">
+      <li key={eachCharacter.id} className="list-element">
+        <Element eachCharacter={eachCharacter} />
+      </li>
+    </NavLink>
   ));
-  return(
-  <ul className="list">
-    {htmlLi}
-  </ul>
-  )
+  return <ul className="list">{htmlLi}</ul>;
 };
 export default List;
-

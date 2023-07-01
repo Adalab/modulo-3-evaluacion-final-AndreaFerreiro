@@ -8,6 +8,9 @@ const callToApi = () => {
           image: objectAPI.image,
           name: objectAPI.name,
           species: objectAPI.species,
+          status: objectAPI.status,
+          origin: objectAPI.origin.name,
+          episodes: objectAPI.episode.length,
         };
       });
       console.log(cleanData);

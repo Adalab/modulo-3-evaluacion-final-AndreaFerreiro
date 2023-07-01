@@ -29,6 +29,17 @@ function App() {
   const filterCharacters = characterList.filter((eachCharacter) =>
     eachCharacter.name.toLowerCase().includes(search)
   );
+  const {pathname} = useLocation();
+  console.log(pathname);
+  const routeData = matchPath('/element/:elementId', pathname);
+  console.log(routeData)
+
+  const elementId = routeData !== null ? routeData.params.elementId : '';
+  console.log(elementId)
+
+  const elementData = characterList.find((element) => element.id === parseInt(elementId) );
+  console.log(elementData);
+
   return (
     <div className="page">
       <Hero />
@@ -43,7 +54,7 @@ function App() {
               </>
             }
           />
-          <Route path="/element:ElementId" element={<ElementDetail />} filterCharacters={filterCharacters} />
+          <Route path="/element/:elementId" element={<ElementDetail elementData={elementData}/>} />
         </Routes>
       </main>
     </div>

@@ -7,12 +7,13 @@
     background-color: #b0bd2e;
     margin-top: 30px;
     padding: 20px;
-    min-width: 700px;
+    min-width: 200px;
     display: flex;
+    flex-direction: column;
     gap: 30px;
   }
   .detailImg{
-    max-width: 300px;
+    max-width: 200px;
     border-radius: 10px;
   }
   .detailData{
@@ -27,4 +28,17 @@
     border-radius: 10px;
     border: none;
     margin-top: 20px;
+  }
+  .error{
+    color: white;
+    text-align: center;
+  }
+  @media screen and (min-width:764px){
+    .detail{
+      flex-direction: row;
+      min-width: 700px;
+    }
+    .detailImg{
+      width: 400px;
+    }
   }

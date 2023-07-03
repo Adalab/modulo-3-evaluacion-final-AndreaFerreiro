@@ -12,7 +12,8 @@ const callToApi = () => {
           origin: objectAPI.origin.name,
           episodes: objectAPI.episode.length,
         };
-      });
+      })
+      .sort((a, b) => a.name.localeCompare(b.name));
       return cleanData;
     });
 };

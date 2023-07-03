@@ -7,12 +7,17 @@ const ElementDetail = ({ elementData }) => {
       return (
         `${elementData.status} 😵`
       )
-    } else{
+    } else if(elementData.status === 'Alive'){
+      return(
+        `${elementData.status} 😁`
+      )
+    }else{
       return(
         `${elementData.status}`
       )
     }
   }
+  if (elementData){
   return (
     <>
       <section className="detail">
@@ -33,6 +38,16 @@ const ElementDetail = ({ elementData }) => {
         <button className="reset">Volver</button>
       </NavLink>
     </>
-  );
+  )
+  } else{
+    return(
+      <>
+        <p className='error'>Lo sentimos, el personaje buscado no existe</p>
+        <NavLink to={'/'}>
+        <button className="reset">Volver</button>
+      </NavLink>
+      </>
+    )
+  }
 };
 export default ElementDetail;

@@ -20,25 +20,37 @@ function App() {
       });
     }
   }, []);
- 
+
   const handleSearch = (ev) => {
     ev.preventDefault();
-    const namesearchValue = ev.target.value.toLowerCase();
-    setNameSearch(namesearchValue);
-    ls.set('nameSearch', nameSearch);
+    const idInput = ev.target.id;
+    if (idInput === 'name') {
+      const namesearchValue = ev.target.value.toLowerCase();
+      setNameSearch(namesearchValue);
+    } else{
+      const speciesearchValue = ev.target.value.toLowerCase();
+      setSpecieSearch(speciesearchValue);
+    }
   };
-  const filterCharacters = characterList.filter((eachCharacter) =>
-    eachCharacter.name.toLowerCase().includes(nameSearch)
-  ).filter((eachCharacter) => eachCharacter.species.toLowerCase().includes(specieSearch));
-  const {pathname} = useLocation();
+  const filterCharacters = characterList
+    .filter((eachCharacter) =>
+      eachCharacter.name.toLowerCase().includes(nameSearch)
+    )
+    .filter((eachCharacter) =>
+      eachCharacter.species.toLowerCase().includes(specieSearch)
+    );
+  const { pathname } = useLocation();
   const routeData = matchPath('/element/:elementId', pathname);
   const elementId = routeData !== null ? routeData.params.elementId : '';
-  const elementData = characterList.find((element) => element.id === parseInt(elementId) );
-  console.log(elementData);
-  console.log(routeData);
+  const elementData = characterList.find(
+    (element) => element.id === parseInt(elementId)
+  );
   useEffect(() => {
-    ls.set("nameSearch", nameSearch);
+    ls.set('nameSearch', nameSearch);
   }, [nameSearch]);
+  useEffect(() => {
+    ls.set('specieSearch', specieSearch);
+  }, [specieSearch]);
   return (
     <div className="page">
       <Hero />
@@ -48,12 +60,19 @@ function App() {
             path="/"
             element={
               <>
-                <Form handleSearch={handleSearch} nameSearch={nameSearch} filterCharacters={filterCharacters}/>
+                <Form
+                  handleSearch={handleSearch}
+                  nameSearch={nameSearch}
+                  filterCharacters={filterCharacters}
+                />
                 <List filterCharacters={filterCharacters} />
               </>
             }
           />
-          <Route path="/element/:elementId" element={<ElementDetail elementData={elementData}/>} />
+          <Route
+            path="/element/:elementId"
+            element={<ElementDetail elementData={elementData} />}
+          />
         </Routes>
       </main>
     </div>

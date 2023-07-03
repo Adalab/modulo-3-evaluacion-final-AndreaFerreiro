@@ -27,7 +27,7 @@ const ElementDetail = ({ elementData }) => {
           <span className="detailSpecie">Specie: {elementData.species}</span>
           <span className="detailStatus">Status: {handleStatus()}</span>
           <span className="detailOrigin">
-            Origin: {elementData.origin.name}
+            Origin: {elementData.origin}
           </span>
           <span className="detailEpisodes">
             Episodes: {elementData.episodes}

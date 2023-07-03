@@ -32,6 +32,7 @@ const Form = ({ handleSearch, nameSearch, filterCharacters, specieSearch }) => {
             placeholder="Specie"
             id="specie"
             htmlFor="specie"
+            value={specieSearch}
             onInput={handleSearch}
           ></input>
         </label>

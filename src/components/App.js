@@ -16,7 +16,6 @@ function App() {
     if (ls.get('characters', null) === null) {
       callToApi().then((cleanData) => {
         setCharacterList(cleanData);
-        //ls.set('characters', cleanData);
       });
     }
   }, []);

@@ -2,19 +2,30 @@ import '../styles/Detail.scss';
 import { NavLink } from 'react-router-dom';
 
 const ElementDetail = ({ elementData }) => {
+  const handleStatus = () => {
+    if (elementData.status === 'Dead'){
+      return (
+        `${elementData.status} 😵`
+      )
+    } else{
+      return(
+        `${elementData.status}`
+      )
+    }
+  }
   return (
     <>
       <section className="detail">
         <img className="detailImg" src={elementData.image}></img>
         <div className="detailData">
-          <span className="detailName">Nombre: {elementData.name}</span>
-          <span className="detailSpecie">Especie: {elementData.species}</span>
-          <span className="detailStatus">Estado: {elementData.status}</span>
+          <span className="detailName">Name: {elementData.name}</span>
+          <span className="detailSpecie">Specie: {elementData.species}</span>
+          <span className="detailStatus">Status: {handleStatus()}</span>
           <span className="detailOrigin">
-            Origen: {elementData.origin.name}
+            Origin: {elementData.origin.name}
           </span>
           <span className="detailEpisodes">
-            Episodios: {elementData.episodes}
+            Episodes: {elementData.episodes}
           </span>
         </div>
       </section>
@@ -25,9 +36,3 @@ const ElementDetail = ({ elementData }) => {
   );
 };
 export default ElementDetail;
-/*
-        species: objectAPI.species,
-        status: objectAPI.status,
-        origin: objectAPI.origin.name,
-        episodes: objectAPI.episode.length,
-*/

@@ -5,7 +5,7 @@
     align-items: center;
   }
   .name-input {
-    width: 300px;
+    width: 100px;
     background-color: white;
     border: 1px solid white;
     height: 30px;
@@ -13,7 +13,7 @@
     margin-bottom: 20px;
   }
   .specie-input{
-    width: 300px;
+    width: 100px;
     background-color: white;
     border: 1px solid white;
     height: 30px;
@@ -22,4 +22,9 @@
   }
   .message{
     color: white;
+  }
+  @media screen and (min-width:764px){
+    .name-input, .specie-input{
+      width: 300px;
+    }
   }

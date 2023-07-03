@@ -4,6 +4,12 @@
     align-items: center;
   }
   .hero__img{
-    width: 500px;
+    width: 300px;
     margin-bottom: 20px;
+  }
+  @media screen and (min-width:764px){
+    .hero__img{
+      width: 500px;
+      margin-bottom: 20px;
+    }
   }

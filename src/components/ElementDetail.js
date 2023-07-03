@@ -35,16 +35,16 @@ const ElementDetail = ({ elementData }) => {
         </div>
       </section>
       <NavLink key={elementData.id} to={'/'}>
-        <button className="reset">Volver</button>
+        <button className="reset">Go back</button>
       </NavLink>
     </>
   )
   } else{
     return(
       <>
-        <p className='error'>Lo sentimos, el personaje buscado no existe</p>
+        <p className='error'>Sorry, Character not found</p>
         <NavLink to={'/'}>
-        <button className="reset">Volver</button>
+        <button className="reset">Go back</button>
       </NavLink>
       </>
     )

@@ -34,7 +34,7 @@ const ElementDetail = ({ elementData }) => {
           </span>
         </div>
       </section>
-      <NavLink key={elementData.id} to={'/'}>
+      <NavLink className="link" key={elementData.id} to={'/'}>
         <button className="reset">Go back</button>
       </NavLink>
     </>
@@ -43,7 +43,7 @@ const ElementDetail = ({ elementData }) => {
     return(
       <>
         <p className='error'>Sorry, Character not found</p>
-        <NavLink to={'/'}>
+        <NavLink className="link" to={'/'}>
         <button className="reset">Go back</button>
       </NavLink>
       </>

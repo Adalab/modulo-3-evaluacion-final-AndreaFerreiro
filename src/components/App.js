@@ -10,8 +10,8 @@ import Form from './Form';
 import ElementDetail from './ElementDetail';
 function App() {
   const [characterList, setCharacterList] = useState(ls.get('characters', []));
-  const [search, setSearch] = useState('');
-
+  const [nameSearch, setNameSearch] = useState(ls.get('nameSearch', ''));
+  const [specieSearch, setSpecieSearch] = useState('');
   useEffect(() => {
     if (ls.get('characters', null) === null) {
       callToApi().then((cleanData) => {
@@ -20,20 +20,23 @@ function App() {
       });
     }
   }, []);
+ 
   const handleSearch = (ev) => {
     ev.preventDefault();
-    const searchValue = ev.target.value.toLowerCase();
-    setSearch(searchValue);
-    ls.set('search', search);
+    const namesearchValue = ev.target.value.toLowerCase();
+    setNameSearch(namesearchValue);
+    ls.set('nameSearch', nameSearch);
   };
   const filterCharacters = characterList.filter((eachCharacter) =>
-    eachCharacter.name.toLowerCase().includes(search)
-  );
+    eachCharacter.name.toLowerCase().includes(nameSearch)
+  ).filter((eachCharacter) => eachCharacter.species.toLowerCase().includes(specieSearch));
   const {pathname} = useLocation();
   const routeData = matchPath('/element/:elementId', pathname);
   const elementId = routeData !== null ? routeData.params.elementId : '';
   const elementData = characterList.find((element) => element.id === parseInt(elementId) );
-  console.log(elementData);
+  useEffect(() => {
+    ls.set("nameSearch", nameSearch);
+  }, [nameSearch]);
   return (
     <div className="page">
       <Hero />
@@ -43,7 +46,7 @@ function App() {
             path="/"
             element={
               <>
-                <Form handleSearch={handleSearch} />
+                <Form handleSearch={handleSearch} nameSearch={nameSearch} filterCharacters={filterCharacters}/>
                 <List filterCharacters={filterCharacters} />
               </>
             }

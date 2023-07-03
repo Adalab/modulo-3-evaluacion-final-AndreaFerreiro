@@ -18,7 +18,7 @@ const Form = ({ handleSearch, nameSearch, filterCharacters, specieSearch }) => {
           <input
             className="name-input"
             type="text"
-            placeholder="Filtrar por nombre"
+            placeholder="Name"
             id="name"
             htmlFor="name"
             value={nameSearch}
@@ -29,7 +29,7 @@ const Form = ({ handleSearch, nameSearch, filterCharacters, specieSearch }) => {
           <input
             className="specie-input"
             type="text"
-            placeholder="Filtrar por especie"
+            placeholder="Specie"
             id="specie"
             htmlFor="specie"
             onInput={handleSearch}

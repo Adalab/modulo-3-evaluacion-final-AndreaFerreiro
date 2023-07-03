@@ -62,6 +62,7 @@ function App() {
                 <Form
                   handleSearch={handleSearch}
                   nameSearch={nameSearch}
+                  specieSearch={specieSearch}
                   filterCharacters={filterCharacters}
                 />
                 <List filterCharacters={filterCharacters} />

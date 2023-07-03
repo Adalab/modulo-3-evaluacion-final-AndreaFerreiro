@@ -2,11 +2,12 @@ import '../styles/Detail.scss';
 import { NavLink } from 'react-router-dom';
 
 const ElementDetail = ({ elementData }) => {
+  console.log(elementData);
   return (
     <>
       <section className="detail">
         <img className="detailImg" src={elementData.image}></img>
-        <div className="detailData">
+       {/*<div className="detailData">
           <span className="detailName">Nombre: {elementData.name}</span>
           <span className="detailSpecie">Especie: {elementData.species}</span>
           <span className="detailStatus">Estado: {elementData.status}</span>
@@ -16,7 +17,7 @@ const ElementDetail = ({ elementData }) => {
           <span className="detailEpisodes">
             Episodios: {elementData.episodes}
           </span>
-        </div>
+  </div>*/}
       </section>
       <NavLink key={elementData.id} to={"/"}>
         <button className="reset">Volver</button>

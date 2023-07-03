@@ -34,6 +34,8 @@ function App() {
   const routeData = matchPath('/element/:elementId', pathname);
   const elementId = routeData !== null ? routeData.params.elementId : '';
   const elementData = characterList.find((element) => element.id === parseInt(elementId) );
+  console.log(elementData);
+  console.log(routeData);
   useEffect(() => {
     ls.set("nameSearch", nameSearch);
   }, [nameSearch]);
